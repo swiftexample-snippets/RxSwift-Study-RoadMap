@@ -8,6 +8,9 @@
 
 import Foundation
 import RxSwift
+import RxRealm
+import RealmSwift
+
 
 
 //struct Track:Codable {
@@ -26,7 +29,8 @@ struct Track: Codable {
     let collectionName, collectionCensoredName, trackCensoredName: String?
     let artistViewURL, collectionViewURL, trackViewURL: String?
     let previewURL: String?
-    let artworkUrl30, artworkUrl60, artworkUrl100: String?
+    var artworkUrl100: String?
+    let artworkUrl30, artworkUrl60 : String?
     let collectionPrice, trackPrice: Double?
     let collectionExplicitness, trackExplicitness: Explicitness?
     let discCount, discNumber, trackCount, trackNumber: Int?
@@ -52,7 +56,16 @@ struct Track: Codable {
         case collectionArtistID = "collectionArtistId"
     }
     
+    
+    var artworkUrl800:String?{
+        
+         return artworkUrl100?.replacingOccurrences(of: "100", with: "800")
+        
+    }
+   
+    
     static func allTracks() -> Observable<[Track]>{
+
         return Observable.create { (observer) -> Disposable in
             APIManager.requestData(url: "https://itunes.apple.com/search?term=jack+johnson", method: .get, parameters: nil) { (result) in
                 switch result{
@@ -68,6 +81,8 @@ struct Track: Codable {
         }
         
     }
+    
+ 
 }
 
 enum ArtistName: String, Codable {

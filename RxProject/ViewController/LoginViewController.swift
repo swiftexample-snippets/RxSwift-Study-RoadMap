@@ -16,13 +16,23 @@ extension String{
         return regex.firstMatch(in: lhs, options: [], range: range) != nil
     }
 }
+
+//class LabelValidation: UILabel {
+//    override var isEnabled: Bool{
+//        didSet {
+//            backgroundColor = isEnabled ? UIColor.red : UIColor.gray
+//        }
+//    }
+//}
 class RedButton:UIButton{
     override var isEnabled: Bool{
         didSet{
+
             backgroundColor = isEnabled ? UIColor.red : UIColor.gray
         }
     }
 }
+
 
 class LoginViewController: UIViewController {
 
@@ -30,15 +40,17 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var textPassword: UITextField!
     @IBOutlet weak var buttonLogin: RedButton!
     
-
+    @IBOutlet weak var labelEmail: UILabel!
+    @IBOutlet weak var labelPassword: UILabel!
     
-    let loginVM = LoginViewModel()
+    let loginVM = LoginVM()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         textEmail.rx.text.orEmpty
+
+            
 //            .scan("", accumulator: { (prev, next) -> String in
 //                print("prev \(prev) : next \(next)")
 //                print(next ~= "^[0-9]*$")
@@ -50,21 +62,49 @@ class LoginViewController: UIViewController {
 //            .do(onNext: { [unowned self]  in
 //                self.textEmail.text = $0
 //            })
+          
             .bind(to: loginVM.emailText)
+            
             .disposed(by: disposeBag)
         
         
-        textPassword.rx.text.orEmpty
+        
+        
+        
+        
+            textPassword.rx.text.orEmpty
             .bind(to: loginVM.passwordText)
             .disposed(by: disposeBag)
-       
+    
+     
+        loginVM.isValidEmail.subscribe(onNext : { [weak self] isValidEmail in
+            if self?.textEmail.text != "" {
+                self?.labelEmail.text = isValidEmail ? "Valid Email" : "Invalid Email"
+            }else{
+                self?.labelEmail.text  = "Enter Email Address"
+            }
+        }).disposed(by: disposeBag)
+        
+    
+        loginVM.isValidPassword.subscribe(onNext : { [weak self] isValidPassword in
+            if self?.textPassword.text != "" {
+                self?.labelPassword.text = isValidPassword ? "Valid Password" : "Invalid Password"
+            }else{
+                self?.labelPassword.text  = "Enter Password"
+            }
+        }).disposed(by: disposeBag)
+        
+        
+        
         loginVM.isValid
+            
             .bind(to: buttonLogin.rx.isEnabled)
             .disposed(by: disposeBag)
         
         buttonLogin.rx.tap
             .subscribe(onNext : {
                 print("tappp")
+                self.performSegue(withIdentifier: "details", sender: nil)
                 
             })
             .disposed(by: disposeBag)

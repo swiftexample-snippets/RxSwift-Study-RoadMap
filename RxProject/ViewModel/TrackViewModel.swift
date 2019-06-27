@@ -9,10 +9,18 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import RxRealm
+import RealmSwift
+
 
 
 class TracksViewModel {
     public let onTracksUpdate : PublishSubject<[Track]> = PublishSubject()
+    public let loading : PublishSubject<Bool> = PublishSubject()
+    
+
+    
+    
     public enum ApiError{
         case internetError(String)
         case serverMessage(String)
@@ -21,8 +29,13 @@ class TracksViewModel {
    
     public let error : PublishSubject<ApiError> = PublishSubject()
     private let disposeBag = DisposeBag()
-    
+
     var contacts : [Track] = []
+    
+    let tracksDetVC = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "detailsVC") as? TrackDetailViewController
+
+    
+    
     func setupSearch(text: RxCocoa.ControlProperty<String?>){
         text
          
@@ -50,15 +63,23 @@ class TracksViewModel {
     }
     
     public func loadData(){
+        self.loading.onNext(true)
+
         Track.allTracks()
+         
         .do(onNext: { (data) in
             self.contacts.removeAll()
             self.contacts.append(contentsOf: data)
+            self.loading.onNext(false)
             self.onTracksUpdate.onNext(data)
+            
         })
         .subscribe()
         .disposed(by: disposeBag)
     }
+    
+ 
+    
     
 }
 
@@ -76,11 +97,13 @@ class TracksViewModel {
 
 struct LoginViewModel {
     
-    var emailText  = BehaviorSubject<String>(value: "")
-    var passwordText = BehaviorSubject<String>(value: "")
-    
+    var emailText  = BehaviorRelay<String>(value: "")
+    var passwordText = BehaviorRelay<String>(value: "")
+
     var isValidEmail : Observable<Bool> {
+        
         return self.emailText.asObservable().map { email in
+           
             Validator.validEmail(email: email)
         }
     }
@@ -91,6 +114,7 @@ struct LoginViewModel {
             
         }
     }
+  
     
     var isValid: Observable<Bool> {
         return Observable.combineLatest(isValidEmail, isValidPassword){
@@ -100,13 +124,5 @@ struct LoginViewModel {
     
 }
 
-class Validator {
-    
-    class func validEmail(email:String) -> Bool {
-        if let regex = try? NSRegularExpression(pattern: "^\\S+@\\S+\\.\\S+$", options: .caseInsensitive){
-            return regex.matches(in: email, options: NSRegularExpression.MatchingOptions.reportProgress, range: NSMakeRange(0,                                                                                                                        email.lengthOfBytes(using: String.Encoding.utf8))).count > 0 }
-        return false
-    }
-}
 
 

@@ -21,6 +21,19 @@
 		7212CAE222AE604E0028B3DC /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7212CAE122AE604E0028B3DC /* TrackViewModel.swift */; };
 		7212CAE522AEA91B0028B3DC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7212CAE422AEA91B0028B3DC /* Extensions.swift */; };
 		7212CAE722B0D4160028B3DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7212CAE622B0D4160028B3DC /* LoginViewController.swift */; };
+		7212CAEC22B11ACE0028B3DC /* RxPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7212CAEB22B11ACE0028B3DC /* RxPlayer.swift */; };
+		7212CAF122B1F3710028B3DC /* AnimateloadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7212CAED22B1F36F0028B3DC /* AnimateloadingView.swift */; };
+		7212CAF222B1F3710028B3DC /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7212CAEE22B1F36F0028B3DC /* LoadingView.xib */; };
+		7212CAF322B1F3710028B3DC /* LoadingViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7212CAEF22B1F3700028B3DC /* LoadingViewable.swift */; };
+		7212CAF422B1F3710028B3DC /* loadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7212CAF022B1F3700028B3DC /* loadingView.swift */; };
+		7212CAF722B1F5010028B3DC /* ReactiveExtensiones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7212CAF622B1F5010028B3DC /* ReactiveExtensiones.swift */; };
+		7281E6C722C337E200844B47 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E6C622C337E200844B47 /* LoginVM.swift */; };
+		7281E6C922C3423A00844B47 /* TrackDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E6C822C3423A00844B47 /* TrackDetailViewController.swift */; };
+		7281E6CB22C3427F00844B47 /* TrackDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E6CA22C3427F00844B47 /* TrackDetailsVM.swift */; };
+		7281E6CD22C3AF6800844B47 /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E6CC22C3AF6800844B47 /* CategoriesCollectionViewCell.swift */; };
+		7281E6CF22C3AFFF00844B47 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E6CE22C3AFFF00844B47 /* HomeCollectionViewController.swift */; };
+		7281E6D122C3B61300844B47 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E6D022C3B61300844B47 /* DetailCollectionViewCell.swift */; };
+		72F6635B22B28EB0007EECFB /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6635A22B28EB0007EECFB /* Service.swift */; };
 		D335F27AE4C52E418ACF2338 /* Pods_RxProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5A269F9B2987004F8753E6 /* Pods_RxProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +77,19 @@
 		7212CAE122AE604E0028B3DC /* TrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
 		7212CAE422AEA91B0028B3DC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7212CAE622B0D4160028B3DC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		7212CAE922B0D48B0028B3DC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		7212CAEB22B11ACE0028B3DC /* RxPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxPlayer.swift; sourceTree = "<group>"; };
+		7212CAED22B1F36F0028B3DC /* AnimateloadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateloadingView.swift; sourceTree = "<group>"; };
+		7212CAEE22B1F36F0028B3DC /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		7212CAEF22B1F3700028B3DC /* LoadingViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewable.swift; sourceTree = "<group>"; };
+		7212CAF022B1F3700028B3DC /* loadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadingView.swift; sourceTree = "<group>"; };
+		7212CAF622B1F5010028B3DC /* ReactiveExtensiones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveExtensiones.swift; sourceTree = "<group>"; };
+		7281E6C622C337E200844B47 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		7281E6C822C3423A00844B47 /* TrackDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailViewController.swift; sourceTree = "<group>"; };
+		7281E6CA22C3427F00844B47 /* TrackDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailsVM.swift; sourceTree = "<group>"; };
+		7281E6CC22C3AF6800844B47 /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		7281E6CE22C3AFFF00844B47 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
+		7281E6D022C3B61300844B47 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		72F6635A22B28EB0007EECFB /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		AF5A269F9B2987004F8753E6 /* Pods_RxProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -136,6 +161,7 @@
 				7212CAAF22AE170C0028B3DC /* Assets.xcassets */,
 				7212CAB122AE170C0028B3DC /* LaunchScreen.storyboard */,
 				7212CAB422AE170C0028B3DC /* Info.plist */,
+				7212CAF522B1F37C0028B3DC /* LoadingView */,
 				7212CAE022AE324F0028B3DC /* Models */,
 			);
 			path = RxProject;
@@ -164,6 +190,8 @@
 			children = (
 				7212CAD622AE181C0028B3DC /* TracksTableViewCell.swift */,
 				7212CAD722AE181C0028B3DC /* TracksTableViewCell.xib */,
+				7281E6CC22C3AF6800844B47 /* CategoriesCollectionViewCell.swift */,
+				7281E6D022C3B61300844B47 /* DetailCollectionViewCell.swift */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -171,8 +199,10 @@
 		7212CADD22AE18E40028B3DC /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				7212CAEB22B11ACE0028B3DC /* RxPlayer.swift */,
 				7212CADB22AE18D50028B3DC /* Network.swift */,
 				7212CAE422AEA91B0028B3DC /* Extensions.swift */,
+				7212CAF622B1F5010028B3DC /* ReactiveExtensiones.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -181,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				7212CADE22AE32440028B3DC /* Track.swift */,
+				72F6635A22B28EB0007EECFB /* Service.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,7 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				7212CAE122AE604E0028B3DC /* TrackViewModel.swift */,
-				7212CAE922B0D48B0028B3DC /* LoginViewModel.swift */,
+				7281E6C622C337E200844B47 /* LoginVM.swift */,
+				7281E6CA22C3427F00844B47 /* TrackDetailsVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -199,8 +231,21 @@
 			children = (
 				7212CAAA22AE170A0028B3DC /* TracksViewController.swift */,
 				7212CAE622B0D4160028B3DC /* LoginViewController.swift */,
+				7281E6C822C3423A00844B47 /* TrackDetailViewController.swift */,
+				7281E6CE22C3AFFF00844B47 /* HomeCollectionViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7212CAF522B1F37C0028B3DC /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				7212CAED22B1F36F0028B3DC /* AnimateloadingView.swift */,
+				7212CAF022B1F3700028B3DC /* loadingView.swift */,
+				7212CAEE22B1F36F0028B3DC /* LoadingView.xib */,
+				7212CAEF22B1F3700028B3DC /* LoadingViewable.swift */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 		87D772E8544CFFCDE02A3898 /* Pods */ = {
@@ -322,6 +367,7 @@
 				7212CAB022AE170C0028B3DC /* Assets.xcassets in Resources */,
 				7212CAAE22AE170A0028B3DC /* Main.storyboard in Resources */,
 				7212CAD922AE181C0028B3DC /* TracksTableViewCell.xib in Resources */,
+				7212CAF222B1F3710028B3DC /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,7 +397,10 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RxProject/Pods-RxProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -360,7 +409,10 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -399,14 +451,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7281E6CD22C3AF6800844B47 /* CategoriesCollectionViewCell.swift in Sources */,
 				7212CAAB22AE170A0028B3DC /* TracksViewController.swift in Sources */,
+				7281E6C922C3423A00844B47 /* TrackDetailViewController.swift in Sources */,
+				7281E6D122C3B61300844B47 /* DetailCollectionViewCell.swift in Sources */,
+				72F6635B22B28EB0007EECFB /* Service.swift in Sources */,
 				7212CADF22AE32440028B3DC /* Track.swift in Sources */,
+				7281E6CF22C3AFFF00844B47 /* HomeCollectionViewController.swift in Sources */,
 				7212CAE222AE604E0028B3DC /* TrackViewModel.swift in Sources */,
+				7212CAF322B1F3710028B3DC /* LoadingViewable.swift in Sources */,
+				7212CAF122B1F3710028B3DC /* AnimateloadingView.swift in Sources */,
 				7212CAA922AE170A0028B3DC /* AppDelegate.swift in Sources */,
 				7212CAE722B0D4160028B3DC /* LoginViewController.swift in Sources */,
 				7212CAD822AE181C0028B3DC /* TracksTableViewCell.swift in Sources */,
 				7212CADC22AE18D50028B3DC /* Network.swift in Sources */,
+				7212CAF422B1F3710028B3DC /* loadingView.swift in Sources */,
+				7212CAF722B1F5010028B3DC /* ReactiveExtensiones.swift in Sources */,
+				7281E6CB22C3427F00844B47 /* TrackDetailsVM.swift in Sources */,
+				7212CAEC22B11ACE0028B3DC /* RxPlayer.swift in Sources */,
 				7212CAE522AEA91B0028B3DC /* Extensions.swift in Sources */,
+				7281E6C722C337E200844B47 /* LoginVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

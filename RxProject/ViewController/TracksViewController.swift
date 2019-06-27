@@ -18,7 +18,8 @@ class TracksViewController: UIViewController,UITableViewDelegate {
     
     let disposebag = DisposeBag()
     
-    
+     let activityIndicator = UIActivityIndicatorView()
+
     
     
     
@@ -31,9 +32,17 @@ class TracksViewController: UIViewController,UITableViewDelegate {
     
     func setupBindings(){
         
+        trackVM.loading
+                .bind(to: self.rx.isAnimating)
+                .disposed(by: disposebag)
+
+        
+        
         
         trackVM.setupSearch(text: searchBar.rx.text)
+       
         tableViewTracks.register(UINib(nibName: "TracksTableViewCell", bundle: nil), forCellReuseIdentifier: String(describing: TracksTableViewCell.self))
+        
         trackVM.onTracksUpdate
             .observeOn(MainScheduler.instance)
             .bind(to: tableViewTracks.rx.items(cellIdentifier: "TracksTableViewCell", cellType: TracksTableViewCell.self)){  (row,track,cell) in
@@ -41,7 +50,32 @@ class TracksViewController: UIViewController,UITableViewDelegate {
             }
             .disposed(by: disposebag)
         
-    
+        tableViewTracks.rx.modelSelected(Track.self)
+            .subscribe(onNext: { value in
+                 let tracksDetVC = self.storyboard?.instantiateViewController(withIdentifier: "detailsVC") as? TrackDetailViewController
+                tracksDetVC?.detVM.trackDetails.accept(value)
+                self.navigationController?.pushViewController(tracksDetVC!, animated: true)
+                
+            })
+        .disposed(by: disposebag)
+        
+        
+//        tableViewTracks.rx.modelDeselected(Track.self)
+//            .subscribe({ value in
+//                tableViewTracks.deselectRow(at: indexpath , animated: true)
+//            })
+//            .disposed(by: disposebag)
+        
+//        tableViewTracks.refreshControl?.rx.controlEvent(.valueChanged)
+//            .subscribe(onNext: { [weak self] in
+//                self?.trackVM.loadData()
+//            })
+//            .disposed(by: disposebag)
+        
+      
+        
+  
+        
         
         
     }

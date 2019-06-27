@@ -7,6 +7,7 @@ use_frameworks!
 pod 'RxSwift'
 pod 'RxCocoa'
 pod 'SwiftyJSON'
+pod "RxRealm"
 
 
 end

@@ -26,16 +26,28 @@
                             <constraint firstAttribute="height" constant="60" id="aHj-ek-hzr"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pib-HA-49l">
-                        <rect key="frame" x="100" y="35" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pib-HA-49l">
+                        <rect key="frame" x="100" y="35" width="42" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXN-aG-zau" customClass="audioButton" customModule="RxProject" customModuleProvider="target">
+                        <rect key="frame" x="260" y="25.5" width="40" height="40"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="aDu-VL-FRM"/>
+                            <constraint firstAttribute="width" constant="40" id="w3F-pJ-4ea"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="play"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="aWe-Lz-rJd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="0ds-lY-Ixb"/>
+                    <constraint firstItem="ZXN-aG-zau" firstAttribute="centerY" secondItem="pib-HA-49l" secondAttribute="centerY" id="3lR-QU-8HI"/>
+                    <constraint firstAttribute="trailing" secondItem="ZXN-aG-zau" secondAttribute="trailing" constant="20" id="7ry-MK-8sE"/>
                     <constraint firstItem="pib-HA-49l" firstAttribute="leading" secondItem="aWe-Lz-rJd" secondAttribute="trailing" constant="20" id="IU0-D2-sbB"/>
+                    <constraint firstItem="ZXN-aG-zau" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pib-HA-49l" secondAttribute="trailing" constant="10" id="MWn-La-GiL"/>
                     <constraint firstAttribute="bottom" secondItem="aWe-Lz-rJd" secondAttribute="bottom" constant="15" id="QVP-Ts-mMC"/>
                     <constraint firstItem="pib-HA-49l" firstAttribute="centerY" secondItem="aWe-Lz-rJd" secondAttribute="centerY" id="TwK-Mq-ZLh"/>
                     <constraint firstItem="aWe-Lz-rJd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="cqU-W3-Vng"/>
@@ -44,10 +56,14 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="buttonPlay" destination="ZXN-aG-zau" id="2eU-AM-Rqy"/>
                 <outlet property="imageTrack" destination="aWe-Lz-rJd" id="ey9-bv-x4O"/>
                 <outlet property="labelTrackTitle" destination="pib-HA-49l" id="iRc-Oj-Rrg"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="167.74553571428569"/>
+            <point key="canvasLocation" x="137.68115942028987" y="167.07589285714286"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="play" width="100" height="100"/>
+    </resources>
 </document>
