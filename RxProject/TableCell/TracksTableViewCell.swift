@@ -39,7 +39,7 @@ class TracksTableViewCell: UITableViewCell {
     @IBOutlet weak var imageTrack: UIImageView!
     @IBOutlet weak var labelTrackTitle: UILabel!
     @IBOutlet weak var buttonPlay: audioButton!
-    let player = RxPlayer()
+//    let player = RxPlayer()
     let disposebag = DisposeBag()
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -55,10 +55,10 @@ class TracksTableViewCell: UITableViewCell {
                 .subscribe({_ in
                     
                     let url = URL(string: "https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/9d/45/8a/9d458a3b-b7b4-889f-8d26-c1fc89be94ad/mzaf_7235570234125559013.plus.aac.p.m4a")
-                    let playItem = RxPlayerItem(title: "", artist: "", url: url)
+//                    let playItem = RxPlayerItem(title: "", artist: "", url: url)
                     
                     
-                    self.player.playItem(playItem)
+//                    self.player.playItem(playItem)
                 })
                 
                 
